@@ -40,8 +40,24 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: const Text('App bar')
       ),
-      body: Center(
-        child: Text('Contador: $counter')
+      body: SizedBox(
+        width: double.infinity,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            Container(
+              width: 80,
+              height: 80,
+              color: Colors.red,
+            ),
+            Container(
+              width: 80,
+              height: 80,
+              color: Colors.blue,
+            )
+          ],
+        )
       ),
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.add),
