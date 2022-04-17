@@ -1,3 +1,4 @@
+import 'package:first_app/home_controller.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -5,17 +6,19 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var controller = HomeController.of(context);
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('hahahaha')
       ),
-      body: const Center(
-        child: Text('fdasfdasfdaaaas')
+      body: Center(
+        child: Text('Contador: ${controller.count}')
       ),
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.add),
         onPressed: () {
-          print('Clicou');
+          controller.increment();
         },
       ),
     );
