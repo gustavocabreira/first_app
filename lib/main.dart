@@ -21,10 +21,19 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Material(
-      child: Center(
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('hahahaha')
+      ),
+      body: const Center(
         child: Text('fdasfdasfdaaaas')
-      )
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: const Icon(Icons.add),
+        onPressed: () {
+          print('Clicou');
+        },
+      ),
     );
   }
 }
