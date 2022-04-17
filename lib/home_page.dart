@@ -42,21 +42,19 @@ class _HomePageState extends State<HomePage> {
       ),
       body: SizedBox(
         width: double.infinity,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            Container(
-              width: 80,
-              height: 80,
-              color: Colors.red,
-            ),
-            Container(
-              width: 80,
-              height: 80,
-              color: Colors.blue,
-            )
-          ],
+        height: double.infinity,
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              for(var i = 0; i<=10; i++)
+                Container(
+                  width: double.infinity,
+                  height: 80,
+                  margin: const EdgeInsets.all(8),
+                  color: Colors.red,
+                ),
+            ],
+          ),
         )
       ),
       floatingActionButton: FloatingActionButton(
