@@ -1,6 +1,6 @@
 
-import 'package:first_app/home_controller.dart';
-import 'package:first_app/pages/login_page.dart';
+import 'package:first_app/screens/entidades_screen.dart';
+import 'package:first_app/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -12,6 +12,9 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    
+    WidgetsFlutterBinding.ensureInitialized();
+
     var isLoggedIn = false;
 
     SharedPreferences.getInstance().then((prefs) {
@@ -19,7 +22,13 @@ class MyApp extends StatelessWidget {
     });
 
     return MaterialApp(
-      home: isLoggedIn ? const HomePage() : const LoginPage()
+      //home: isLoggedIn ? const HomePage() : const LoginScreen(),
+      title: 'Sou Contribuinte',
+      initialRoute: '/',
+      routes: {
+        '/': (context) => isLoggedIn ? const HomePage() : const LoginScreen(),
+        '/home': (context) => const EntidadesPage(),
+      }
     );
   }
 }

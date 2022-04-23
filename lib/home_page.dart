@@ -1,29 +1,5 @@
+import 'package:first_app/widget/navigation_drawer_widget.dart';
 import 'package:flutter/material.dart';
-
-// class HomePage extends StatelessWidget {
-//   const HomePage({Key? key}) : super(key: key);
-
-//   @override
-//   Widget build(BuildContext context) {
-//     var controller = HomeController.of(context);
-
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: const Text('hahahaha')
-//       ),
-//       body: Center(
-//         child: Text('Contador: ${controller.count}')
-//       ),
-//       floatingActionButton: FloatingActionButton(
-//         child: const Icon(Icons.add),
-//         onPressed: () {
-//           controller.increment();
-//         },
-//       ),
-//     );
-//   }
-// }
-
 class HomePage extends StatefulWidget {
   const HomePage({ Key? key }) : super(key: key);
 
@@ -34,27 +10,16 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   var counter = 0;
 
+
   @override
   Widget build(BuildContext context) {
-    final names = ['joao', 'maria', 'joaquim'];
 
     return Scaffold(
+      drawer: const NavigationDrawerWidiget(),
       appBar: AppBar(
         title: const Text('App bar')
       ),
-      body: SizedBox(
-        width: double.infinity,
-        height: double.infinity,
-        child: ListView.builder(
-          itemCount: names.length,
-          itemBuilder: (context, index) {
-            final name = names[index];
-            return ListTile(
-              title: Text(name)
-            );
-          },
-        )
-      ),
+      body: const SizedBox(),
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.add),
         onPressed: () {

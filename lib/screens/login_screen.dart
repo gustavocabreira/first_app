@@ -6,14 +6,14 @@ import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({Key? key}) : super(key: key);
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _LoginScreenState extends State<LoginScreen> {
   
   String email = '';
   String password = '';
@@ -91,9 +91,7 @@ class _LoginPageState extends State<LoginPage> {
         prefs.setString('email', user['email']);
         prefs.setString('token', user['token']);
 
-        Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (builder) => const HomePage())
-        );
+        Navigator.pushNamed(context, '/home');
       });
 
       return;
